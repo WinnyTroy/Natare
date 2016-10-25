@@ -28,7 +28,6 @@ header {
 
 #details {
     text-align: center;
-    background-color: limegreen;
     margin-top: 10px;
 }
 
@@ -36,41 +35,31 @@ header {
 
 .info {
     display: inline-block;
-    float: left;
-    width: 800px;
-    border: 8px dashed black;
-    padding: 50px;
-    height: 400px;
-    margin-right: 0px;
+    align-content: center;
+
 }
 .points {
-    display: inline-block;
-    float: right;
-    border: 8px dashed black;
-    width: 403px;
-    text-align: center;
+    background-image: url("/static/img/natare-f.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: center;
     height: 500px;
-    margin-left: 0px;
+    width:100%;
 }
 footer {
     text-align: center;
     height: 20px;
-    background-color: limegreen;
     border: 8px dashed black;
     border-top: none;
     border-bottom: none;
 }
 #maps {
-    border: 8px dashed black;
-    border-top: none;
+    padding-top: 30px;
     border-bottom: none;
     width: 1320px;
     height: 300px;
     display: inline-block;
     padding-bottom: 30px;
-}
-body {
-    background-color: limegreen;
 }
 body ul{
     float: right;

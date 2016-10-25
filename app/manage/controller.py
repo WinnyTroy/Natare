@@ -69,7 +69,7 @@ class Functionality:
 
         server.starttls()
 
-        server.login('kiraguwinnie@gmail.com', 'nimzbett')
+        server.login('nataregarz@gmail.com', 'natar312')
 
         server.sendmail(to_addrs=receiver, from_addr='kiraguwinnie@gmail.com', msg=response)
 

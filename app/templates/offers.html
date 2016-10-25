@@ -10,10 +10,10 @@
 <body>
    <ul>
         <li>
-            <a href="index.html">Home</a>
-            <a href="reserve.html">Reservations</a>
-            <a href="offers.html">Offers</a>
-            <a href="gallery.html">Gallery</a>
+            <a href="{{ url_for('manage.index') }}">Home</a>
+            <a href="{{ url_for('manage.display_reservation') }}">Reservations</a>
+            <a href="{{ url_for('manage.display_offers') }}">Offers</a>
+            <a href="{{ url_for('manage.display_gallery') }}">Gallery</a>
         </li>
     </ul>
     <header>

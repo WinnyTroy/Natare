@@ -57,6 +57,31 @@ class Booking(Base):
                'Departure_date %r, Room_type %r,>'.format(self.booking_id, self.arrival_date, self.departure_date,
                                                                                                     self.room_type)
 
+class Bookingz(Base):
+    __tablename__ = 'bookingz'
+
+    booking_id = Column(Integer, primary_key=True, autoincrement=True)
+    arrival_date = Column(String())
+    departure_date = Column(String())
+    room_type = Column(String())
+
+
+
+    # initialises the model, creating instances for each field
+    def __init__(self, arrival_date, departure_date):
+        self.arrival_date = arrival_date
+        self.departure_date = departure_date
+        # self.room_type = room_type
+        # self.var = var
+        # , room_type, var
+
+
+       # represent the object when we query for it.
+    def __repr__(self):
+        return '<ID %r, Booking_date %r, Arrival_date %r, ' \
+               'Departure_date %r, Room_type %r,>'.format(self.booking_id, self.arrival_date, self.departure_date,
+                                                                                                    self.room_type)
+
 
 engine = create_engine("sqlite:///natare.db")
 Base.metadata.create_all(engine)
