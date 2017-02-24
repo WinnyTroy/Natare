@@ -1,8 +1,10 @@
-from flask import Flask, render_template,url_for,redirect,request, make_response, Blueprint
+
 from controller import Functionality
+from flask import Flask, render_template, url_for, redirect, request, make_response, Blueprint
+
+
 
 manage = Blueprint('manage', __name__, url_prefix='/')
-
 
 
 @manage.route("/")
@@ -10,6 +12,7 @@ manage = Blueprint('manage', __name__, url_prefix='/')
 @manage.route("home")
 def index():
     return render_template('index.html')
+
 
 
 @manage.route("gallery")
@@ -38,9 +41,9 @@ def display_reservation():
         arrival = request.form["arrivalDate"]
         departure = request.form["departureDate"]
 
-        Functionality.db_access(first,middle,last,work,email,arrival,departure)
-        Functionality.generate_pdf(first,middle, last)
+        Functionality.db_access(first, middle, last,
+                                work, email, arrival, departure)
+        Functionality.generate_pdf(first, middle, last)
         return redirect(url_for('manage.index'))
 
     return render_template('reserve.html')
-

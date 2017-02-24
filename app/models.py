@@ -1,4 +1,4 @@
-from sqlalchemy import Column,String, ForeignKey, Integer
+from sqlalchemy import Column, String, ForeignKey, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
@@ -10,7 +10,7 @@ Base = declarative_base()
 class Users(Base):
     __tablename__ = 'users'
 
-    client_id = Column(Integer, primary_key=True, autoincrement=True  )
+    client_id = Column(Integer, primary_key=True, autoincrement=True)
     f_name = Column(String())
     m_name = Column(String())
     l_name = Column(String())
@@ -26,8 +26,8 @@ class Users(Base):
         self.email_address = email_address
 
     def __repr__(self):
-            return '<User %r, First_Name %r, Middle_Name %r, Last_Name %r, Occupation %r, Email %r>' % self.client_id,\
-                   self.f_name, self.m_name, self.l_name, self.occupation, self.email_address
+        return '<User %r, First_Name %r, Middle_Name %r, Last_Name %r, Occupation %r, Email %r>' % self.client_id,\
+               self.f_name, self.m_name, self.l_name, self.occupation, self.email_address
 
 
 class Booking(Base):
@@ -41,7 +41,6 @@ class Booking(Base):
     user_id = Column(Integer, ForeignKey("users.client_id"))
     var = relationship(Users)
 
-
     # initialises the model, creating instances for each field
     def __init__(self, arrival_date, departure_date):
         self.arrival_date = arrival_date
@@ -49,13 +48,14 @@ class Booking(Base):
         # self.room_type = room_type
         # self.var = var
         # , room_type, var
-
-
-       # represent the object when we query for it.
+        # represent the object when we query for it.
     def __repr__(self):
         return '<ID %r, Booking_date %r, Arrival_date %r, ' \
-               'Departure_date %r, Room_type %r,>'.format(self.booking_id, self.arrival_date, self.departure_date,
-                                                                                                    self.room_type)
+               'Departure_date %r, Room_type %r,>'.format(self.booking_id,
+                                                          self.arrival_date,
+                                                          self.departure_date,
+                                                          self.room_type)
+
 
 class Bookingz(Base):
     __tablename__ = 'bookingz'
@@ -65,8 +65,6 @@ class Bookingz(Base):
     departure_date = Column(String())
     room_type = Column(String())
 
-
-
     # initialises the model, creating instances for each field
     def __init__(self, arrival_date, departure_date):
         self.arrival_date = arrival_date
@@ -75,12 +73,11 @@ class Bookingz(Base):
         # self.var = var
         # , room_type, var
 
-
        # represent the object when we query for it.
     def __repr__(self):
         return '<ID %r, Booking_date %r, Arrival_date %r, ' \
                'Departure_date %r, Room_type %r,>'.format(self.booking_id, self.arrival_date, self.departure_date,
-                                                                                                    self.room_type)
+                                                          self.room_type)
 
 
 engine = create_engine("sqlite:///natare.db")
