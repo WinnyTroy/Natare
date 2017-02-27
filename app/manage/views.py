@@ -3,7 +3,6 @@ from controller import Functionality
 from flask import Flask, render_template, url_for, redirect, request, make_response, Blueprint
 
 
-
 manage = Blueprint('manage', __name__, url_prefix='/')
 
 
@@ -14,7 +13,6 @@ def index():
     return render_template('index.html')
 
 
-
 @manage.route("gallery")
 def display_gallery():
     return render_template('gallery.html')
@@ -22,7 +20,12 @@ def display_gallery():
 
 @manage.route("offers")
 def display_offers():
-    return render_template('offers.html')
+    return render_template('generic.html')
+
+
+@manage.route("menu")
+def display_menu():
+    return render_template('elements.html')
 
 
 @manage.route("reservation", methods=['POST', 'GET'])

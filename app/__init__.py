@@ -6,6 +6,7 @@ from flask_script import Manager
 
 
 app = Flask(__name__)
+app.debug = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
