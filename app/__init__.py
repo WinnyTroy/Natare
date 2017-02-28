@@ -8,9 +8,9 @@ from flask_script import Manager
 def create_app(config_name):
     """
     Application factory, this will allow creation of multiple applications under different configurations
-
     :param config_name: the configuration to
-    :return:
+    :return: a new WSGI flask application
+    :rtype: object
     """
 
 app = Flask(__name__)
