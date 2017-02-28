@@ -5,17 +5,24 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
     """
-    Configuration class for
+    Global configuration from which other configs inherit
+    :cvar THREADS_PER_PAGE: Application threads. A common general assumption is
+    using 2 per available processor cores - to handle
+    incoming requests using one and performing background
+    operations using the other.
+    :cvar CSRF_SESSION_KEY Use a secure, unique and absolutely secret key for signing the data.
     """
-    SECRET_KEY = os.environ.get("SECRET_KEY")
+    # todo: ensure you implement the commented out configurations
+    # SECRET_KEY = os.environ.get("SECRET_KEY")
     CSRF_ENABLE = True
-    CSRF_SESSION_KEY = os.environ.get("CSRF_SESSION_KEY")
+    # CSRF_SESSION_KEY = os.environ.get("CSRF_SESSION_KEY")
     DEBUG = False
     CSRF_ENABLED = True
     THREADS_PER_PAGE = 2
     DATABASE_CONNECT_OPTIONS = {}
-    SQLALCHEMY_DATABASE_URI = os.environ["DATABASE_URL"] or 'sqlite:///' + os.path.join(basedir, 'natare.db')
-    SECURITY_PASSWORD_SALT = os.environ["SECURITY_PASSWORD_SALT"]
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'natare.db')
+    # SQLALCHEMY_DATABASE_URI = os.environ["DATABASE_URL"] or 'sqlite:///' + os.path.join(basedir, 'natare.db')
+    # SECURITY_PASSWORD_SALT = os.environ["SECURITY_PASSWORD_SALT"]
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 

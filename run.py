@@ -1,5 +1,3 @@
-#!task/bin/python
-
 from flask_script import Server, Manager, Shell
 from app import create_app, db
 from flask_migrate import MigrateCommand, Migrate
