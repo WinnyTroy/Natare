@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, Email, EqualTo, Length
 
 class ContactForm(FlaskForm):
     """
-    Register form for new users
+    Contact form for getting in touch
     """
     name = StringField(validators=[DataRequired()])
     email = StringField(validators=[DataRequired(), Email()])

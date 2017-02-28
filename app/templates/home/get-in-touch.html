@@ -8,18 +8,23 @@
         <div class="split style1">
 
         <section>
-            <form method="post" action="{{ url_for('home.display_reservation') }}">
+            <form method="post" action="{{ url_for('home.index') }}">
+                {{ contact_form.csrf_token }}
+                {{ contact_form.hidden_tag() }}
+
                 <div class="field half first">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" />
+                    {{ contact_form.name()}}
                 </div>
+
                 <div class="field half">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" />
+                    {{ contact_form.email() }}
                 </div>
+
                 <div class="4u 12u$(small)">
                     <input type="radio" id="demo-priority-low" name="demo-priority" checked>
-                        <label for="demo-priority-low">Low</label>
+                    <label for="demo-priority-low">Low</label>
                 </div>
                 <div class="4u 12u$(small)">
                     <input type="radio" id="demo-priority-normal" name="demo-priority">
@@ -29,24 +34,19 @@
                     <input type="radio" id="demo-priority-high" name="demo-priority">
                     <label for="demo-priority-high">High</label>
                 </div>
-                <div class="4u$ 12u$(small)">
-                    <input type="radio" id="demo-priority-high" name="demo-priority">
-                    <label for="demo-priority-high">High</label>
-                </div>
-                <div class="4u$ 12u$(small)">
-                    <input type="radio" id="demo-priority-high" name="demo-priority">
-                    <label for="demo-priority-high">High</label>
-                </div>
+
                 <div class="field half first">
                     <label for="name">Arrival Date</label>
-                    <input type="text" name="name" id="name" />
+                    {{ contact_form.arrival_date() }}
                 </div>
                 <div class="field half first">
                     <label for="name">Departure Date</label>
-                    <input type="text" name="name" id="name" />
+                    {{ contact_form.departure_date() }}
                 </div>
                 <ul class="actions">
-                    <li><a href="" class="button submit">Send Message</a></li>
+                    <li>
+                        {{ contact_form.send_message() }}
+                    </li>
                 </ul>
             </form>
         </section>

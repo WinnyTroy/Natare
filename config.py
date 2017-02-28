@@ -13,7 +13,8 @@ class Config(object):
     :cvar CSRF_SESSION_KEY Use a secure, unique and absolutely secret key for signing the data.
     """
     # todo: ensure you implement the commented out configurations
-    # SECRET_KEY = os.environ.get("SECRET_KEY")
+
+    SECRET_KEY = os.environ.get("SECRET_KEY") or "natare_gardens"
     CSRF_ENABLE = True
     # CSRF_SESSION_KEY = os.environ.get("CSRF_SESSION_KEY")
     DEBUG = False
