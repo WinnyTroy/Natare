@@ -1,6 +1,6 @@
 from . import manage
 from controller import Functionality
-from flask import render_template, url_for, redirect, request, make_response
+from flask import render_template, url_for, redirect, request
 
 
 @manage.route("/")
@@ -46,4 +46,4 @@ def display_reservation():
         Functionality.generate_pdf(first, middle, last)
         return redirect(url_for('manage.index'))
 
-    return render_template('reserve.html')
+    return render_template('index.html')
