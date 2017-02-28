@@ -10,6 +10,7 @@ def generate_pdf(name):
     response = make_response(pdf)
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'inline; filename = bookings.pdf'
+    return response
 
 
 def send_email(message, to):
