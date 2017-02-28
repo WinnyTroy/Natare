@@ -13,7 +13,7 @@ def index():
 
 @home.route("menu")
 def display_menu():
-    return render_template('elements.html')
+    return render_template('menu/elements.html')
 
 
 @home.route("reservation", methods=['POST', 'GET'])

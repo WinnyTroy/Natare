@@ -59,8 +59,8 @@ def register_blueprints(app):
     """
     from app.mod_home import home
     from app.mod_gallery import gallery
-    from app.mod_offers import offers
+    from app.mod_resort import resort
 
-    app.register_blueprint(offers)
+    app.register_blueprint(resort)
     app.register_blueprint(gallery)
     app.register_blueprint(home)

@@ -4,4 +4,4 @@ from . import gallery
 
 @gallery.route("")
 def display_gallery():
-    return render_template('gallery.html')
+    return render_template('gallery/gallery.html')
