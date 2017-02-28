@@ -53,52 +53,7 @@
 						</div>
 					</section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image">
-								<img src="{{ url_for('static', filename='img/pic01.jpg') }}" alt="" data-position="center center" />
-							</a>
-							<div class="content">
-								<div class="inner">
-									<h2>Fine Dining</h2>
-									<p>Our in-house restaurants ensure you superb meal selections at a fine rate. Truly an amazing ambience for you and your loved ones.</p>
-									<ul class="actions">
-										<li><a href="{{ url_for('home.display_menu') }}" class="button">Take A Sneak Peak at our Menu!</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section>
-							<a href="#" class="image">
-								<img src="{{ url_for('static', filename='img/pic02.jpg') }}" alt="" data-position="top center" />
-							</a>
-							<div class="content">
-								<div class="inner">
-									<h2>Get-away Resort</h2>
-									<p>Offering more than adequate out-door activities ensuring you and your loved ones a fun, energy filled afternoon.</p>
-									<ul class="actions">
-										<li><a href="{{ url_for('offers.display_offers') }}" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image">
-								<img src="{{ url_for('static', filename='img/pic03.jpg')}}" alt="" data-position="25% 25%" />
-							</a>
-							<div class="content">
-								<div class="inner">
-									<h2>Conference and Meeting Halls</h2>
-									<p>We provide serene , segregated rooms for important and semi-large meetings(Capacity: 100persons)</p>
-									<ul class="actions">
-										<li><a href="{{ url_for('gallery.display_gallery') }}" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
+					{% include 'home/offer.html' %}
 
 				<!-- Two -->
 					<section id="two" class="wrapper style3 fade-up">

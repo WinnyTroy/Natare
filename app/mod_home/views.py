@@ -1,32 +1,25 @@
-from . import manage
+from . import home
 from controller import Functionality
+from app.forms import ContactForm
 from flask import render_template, url_for, redirect, request
 
 
-@manage.route("/")
-@manage.route("index")
-@manage.route("home")
+@home.route("/")
+@home.route("index")
+@home.route("home")
 def index():
-    return render_template('index.html')
+    return render_template('home/index.html')
 
 
-@manage.route("gallery")
-def display_gallery():
-    return render_template('gallery.html')
-
-
-@manage.route("offers")
-def display_offers():
-    return render_template('generic.html')
-
-
-@manage.route("menu")
+@home.route("menu")
 def display_menu():
     return render_template('elements.html')
 
 
-@manage.route("reservation", methods=['POST', 'GET'])
+@home.route("reservation", methods=['POST', 'GET'])
 def display_reservation():
+    contact_form = ContactForm()
+
     if request.method == "GET":
         return render_template('reserve.html')
     elif request.method == "POST":
@@ -44,6 +37,6 @@ def display_reservation():
         Functionality.db_access(first, middle, last,
                                 work, email, arrival, departure)
         Functionality.generate_pdf(first, middle, last)
-        return redirect(url_for('manage.index'))
+        return redirect(url_for('mod_home.index'))
 
     return render_template('index.html')

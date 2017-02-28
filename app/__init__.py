@@ -57,6 +57,10 @@ def register_blueprints(app):
     Register your blueprints here.
     :param app: application object
     """
-    from app.manage import manage
+    from app.mod_home import home
+    from app.mod_gallery import gallery
+    from app.mod_offers import offers
 
-    app.register_blueprint(manage)
+    app.register_blueprint(offers)
+    app.register_blueprint(gallery)
+    app.register_blueprint(home)

@@ -37,7 +37,7 @@ class Functionality(object):
         db.session.commit()
 
     @staticmethod
-    def generate_pdf(first, middle, last):
+    def generate_pdf():
         rendered = render_template('reserve.html', first=request.form["firstName"],
                                    middle=request.form["MiddleName"],
                                    last=request.form["lastName"])
