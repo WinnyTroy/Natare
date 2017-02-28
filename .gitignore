@@ -9,6 +9,8 @@
 task/
 migrations
 *.db
+*.pdf
+*.csv
 
 ## File-based project format:
 *.iws
