@@ -1,9 +1,6 @@
-
+from . import manage
 from controller import Functionality
-from flask import Flask, render_template, url_for, redirect, request, make_response, Blueprint
-
-
-manage = Blueprint('manage', __name__, url_prefix='/')
+from flask import render_template, url_for, redirect, request, make_response
 
 
 @manage.route("/")

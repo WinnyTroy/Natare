@@ -53,6 +53,10 @@ def create_app(config_name):
 
 
 def register_blueprints(app):
-    from app.manage.views import manage
+    """
+    Register your blueprints here.
+    :param app: application object
+    """
+    from app.manage import manage
 
     app.register_blueprint(manage)

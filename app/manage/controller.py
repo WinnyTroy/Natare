@@ -1,27 +1,11 @@
 import pdfkit
-from flask import Flask, render_template, url_for, redirect, request, make_response
-from app.models import Users, Booking, Base, engine
-from sqlalchemy.orm import sessionmaker
+from flask import render_template, request, make_response
+from app.models import Users, Booking
+from app import db
 import smtplib
 
 
-# The declarative_base() base class contains a MetaData object where newly defined Table objects are collected.
-# This object is intended to be accessed directly for MetaData - specific operations.Such as,
-# to issue CREATE statements for all tables:
-Base.metadata.create_all(engine)
-
-# Maybe binding the engine to the created db
-Base.metadata.bind = engine
-
-# Making an instance of the session and binding the engine which is
-# collected alongside the Table Objects
-DBsession = sessionmaker(bind=engine)
-
-sessionRep = DBsession()
-
-
-class Functionality:
-
+class Functionality(object):
     @staticmethod
     def db_access(first, middle, last, work, email, arrival, departure):
         """
@@ -39,7 +23,7 @@ class Functionality:
         :return:
         """
         email_string = "Hello, " + first + middle + last + \
-            " you have made a reservation for " + arrival + " to " + departure
+                       " you have made a reservation for " + arrival + " to " + departure
         clients = Users(f_name=first, m_name=middle, l_name=last,
                         occupation=work, email_address=email)
 
@@ -48,15 +32,15 @@ class Functionality:
 
         # then add these new stored infor to the current user session
         # commit the changes
-        sessionRep.add(clients)
-        sessionRep.add(duration)
-        sessionRep.commit()
+        db.session.add(clients)
+        db.session.add(duration)
+        db.session.commit()
 
     @staticmethod
     def generate_pdf(first, middle, last):
-        rendered = render_template('reserve.html', first=request.form["firstName"], 
-            middle=request.form["MiddleName"],
-            last=request.form["lastName"])
+        rendered = render_template('reserve.html', first=request.form["firstName"],
+                                   middle=request.form["MiddleName"],
+                                   last=request.form["lastName"])
         pdf = pdfkit.from_string(rendered, False)
 
         response = make_response(pdf)
@@ -68,7 +52,6 @@ class Functionality:
 
     @staticmethod
     def send_email(response, receiver):
-
         # setting up the smtp server details to use
         server = smtplib.SMTP('smtp.gmail.com:587')
 

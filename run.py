@@ -4,7 +4,7 @@ from flask_script import Server, Manager, Shell
 from app import create_app, db
 from flask_migrate import MigrateCommand, Migrate
 import os
-from app.models import Users
+from app.models import Users, Booking
 
 
 # create the application based on the configuration in the environment
@@ -28,7 +28,8 @@ def make_shell_context():
     return dict(
         app=app,
         db=db,
-        users=Users
+        users=Users,
+        booking=Booking
     )
 
 # add the commands that will be used in the application
