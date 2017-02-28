@@ -11,9 +11,6 @@ migrations
 *.db
 *.pdf
 *.csv
-out.pdf
-booking.csv
-users.csv
 
 ## File-based project format:
 *.iws

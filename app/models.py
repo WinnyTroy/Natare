@@ -3,7 +3,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 
-
 Base = declarative_base()
 
 
@@ -26,7 +25,7 @@ class Users(Base):
         self.email_address = email_address
 
     def __repr__(self):
-        return '<User %r, First_Name %r, Middle_Name %r, Last_Name %r, Occupation %r, Email %r>' % self.client_id,\
+        return '<User %r, First_Name %r, Middle_Name %r, Last_Name %r, Occupation %r, Email %r>' % self.client_id, \
                self.f_name, self.m_name, self.l_name, self.occupation, self.email_address
 
 
@@ -49,6 +48,7 @@ class Booking(Base):
         # self.var = var
         # , room_type, var
         # represent the object when we query for it.
+
     def __repr__(self):
         return '<ID %r, Booking_date %r, Arrival_date %r, ' \
                'Departure_date %r, Room_type %r,>'.format(self.booking_id,
@@ -73,7 +73,8 @@ class Bookingz(Base):
         # self.var = var
         # , room_type, var
 
-       # represent the object when we query for it.
+        # represent the object when we query for it.
+
     def __repr__(self):
         return '<ID %r, Booking_date %r, Arrival_date %r, ' \
                'Departure_date %r, Room_type %r,>'.format(self.booking_id, self.arrival_date, self.departure_date,
