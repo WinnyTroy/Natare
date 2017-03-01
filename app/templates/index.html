@@ -140,16 +140,36 @@
 							Please do not hesitate to reach out for further clarifications</p>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
+									<form method="POST" action="{{ url_for('manage.display_reservation') }}">
 										<div class="field half first">
 											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
+											<input type="text" name="firstName" id="name" placeholder="Full Names" />
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<input type="email" placeholder="Email Address" size="80" name="email" />
 										</div>
-										<div class="4u 12u$(small)">
+										
+										</div> -->
+										<div class="field half first">
+											<label for="name">Arrival Date</label>
+											<input type="text" placeholder="Arrival Date" size="80" 
+											name="arrivalDate"/>
+										</div>
+										<div class="field half first">
+											<label for="name">Departure Date</label>
+											<input type="text" placeholder="Departure Date" size="80" name="departureDate"/>
+										</div>
+										<ul class="actions">
+											<!-- <li><a href="" class="button submit">Submit</a></li> -->
+											<input class="button" type="submit" value="SUBMIT">
+										</ul>
+									</form>
+								</section>
+
+
+
+								<!-- <div class="4u 12u$(small)">
 											<input type="radio" id="demo-priority-low" name="demo-priority" checked>
 												<label for="demo-priority-low">Low</label>
 										</div>
@@ -168,20 +188,6 @@
 										<div class="4u$ 12u$(small)">
 											<input type="radio" id="demo-priority-high" name="demo-priority">
 											<label for="demo-priority-high">High</label>
-										</div>
-										<div class="field half first">
-											<label for="name">Arrival Date</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half first">
-											<label for="name">Departure Date</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
 
 
 

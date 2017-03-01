@@ -1,7 +1,7 @@
+from flask import render_template, url_for, redirect, request, Blueprint
+
 
 from controller import Functionality
-from flask import Flask, render_template, url_for, redirect, request, make_response, Blueprint
-
 
 manage = Blueprint('manage', __name__, url_prefix='/')
 
@@ -31,8 +31,10 @@ def display_menu():
 @manage.route("reservation", methods=['POST', 'GET'])
 def display_reservation():
     if request.method == "GET":
-        return render_template('reserve.html')
+        return render_template('index.html')
     elif request.method == "POST":
+
+        print "Reservation req: %s" % (request.form["firstName"],)
 
         # store data input by the users into their various db fields.
         # allocate the paths to be more precise

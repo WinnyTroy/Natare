@@ -24,20 +24,7 @@ class Functionality:
 
     @staticmethod
     def db_access(first, middle, last, work, email, arrival, departure):
-        """
-        # Now setup an instance of the tables we are going 
-        to interact with in order to store data
-        # instantiate the variables just declared up there with 
-        the relevant field in the table that the data will go to
-        # giving it a path
-
-        :param first:
-        :param middle:
-        :param last:
-        :param work:
-        :param email:
-        :return:
-        """
+        print "request got to db_aceccess"
         email_string = "Hello, " + first + middle + last + \
             " you have made a reservation for " + arrival + " to " + departure
         clients = Users(f_name=first, m_name=middle, l_name=last,
@@ -51,12 +38,14 @@ class Functionality:
         sessionRep.add(clients)
         sessionRep.add(duration)
         sessionRep.commit()
+        print "after commit"
+        return
 
     @staticmethod
     def generate_pdf(first, middle, last):
-        rendered = render_template('reserve.html', first=request.form["firstName"], 
-            middle=request.form["MiddleName"],
-            last=request.form["lastName"])
+        rendered = render_template('reserve.html', first=request.form["firstName"],
+                                   middle=request.form["MiddleName"],
+                                   last=request.form["lastName"])
         pdf = pdfkit.from_string(rendered, False)
 
         response = make_response(pdf)
