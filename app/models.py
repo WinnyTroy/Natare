@@ -1,13 +1,9 @@
 from sqlalchemy import Column, String, ForeignKey, Integer
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from sqlalchemy import create_engine
+from app import db
 
 
-Base = declarative_base()
-
-
-class Users(Base):
+class Users(db.Model):
     __tablename__ = 'users'
 
     client_id = Column(Integer, primary_key=True, autoincrement=True)
@@ -26,11 +22,11 @@ class Users(Base):
         self.email_address = email_address
 
     def __repr__(self):
-        return '<User %r, First_Name %r, Middle_Name %r, Last_Name %r, Occupation %r, Email %r>' % self.client_id,\
+        return '<User %r, First_Name %r, Middle_Name %r, Last_Name %r, Occupation %r, Email %r>' % self.client_id, \
                self.f_name, self.m_name, self.l_name, self.occupation, self.email_address
 
 
-class Booking(Base):
+class Booking(db.Model):
     __tablename__ = 'booking'
 
     booking_id = Column(Integer, primary_key=True, autoincrement=True)
@@ -49,6 +45,7 @@ class Booking(Base):
         # self.var = var
         # , room_type, var
         # represent the object when we query for it.
+
     def __repr__(self):
         return '<ID %r, Booking_date %r, Arrival_date %r, ' \
                'Departure_date %r, Room_type %r,>'.format(self.booking_id,
@@ -57,7 +54,7 @@ class Booking(Base):
                                                           self.room_type)
 
 
-class Bookingz(Base):
+class Bookingz(db.Model):
     __tablename__ = 'bookingz'
 
     booking_id = Column(Integer, primary_key=True, autoincrement=True)
@@ -73,12 +70,9 @@ class Bookingz(Base):
         # self.var = var
         # , room_type, var
 
-       # represent the object when we query for it.
+        # represent the object when we query for it.
+
     def __repr__(self):
         return '<ID %r, Booking_date %r, Arrival_date %r, ' \
                'Departure_date %r, Room_type %r,>'.format(self.booking_id, self.arrival_date, self.departure_date,
                                                           self.room_type)
-
-
-engine = create_engine("sqlite:///natare.db")
-Base.metadata.create_all(engine)
