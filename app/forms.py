@@ -11,4 +11,4 @@ class ContactForm(FlaskForm):
     email = StringField(validators=[DataRequired(), Email()])
     arrival_date = StringField(validators=[DataRequired()])
     departure_date = StringField(validators=[DataRequired()])
-    send_message = SubmitField("SEND MESSAGE")
+    send_message = SubmitField("SUBMIT")
