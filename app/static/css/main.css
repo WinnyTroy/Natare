@@ -15,6 +15,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		color: #000000;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -45,6 +46,7 @@
 
 	body {
 		-webkit-text-size-adjust: none;
+
 	}
 
 /* Box Model */
@@ -1611,6 +1613,7 @@
 
 	body {
 		-ms-overflow-style: scrollbar;
+
 	}
 
 	@media screen and (max-width: 480px) {
@@ -1622,8 +1625,8 @@
 	}
 
 	body {
-		background: #312450;
-	}
+		background: linear-gradient(to right, #00f260, #0575e6);
+		}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 			-moz-animation: none !important;
@@ -1696,10 +1699,11 @@
 
 	p {
 		margin: 0 0 2em 0;
+		color: #000000;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
+		color: #000000;
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
@@ -1891,7 +1895,7 @@
 		border: solid 1px !important;
 		border-color: rgba(255, 255, 255, 0.15) !important;
 		border-radius: 3em;
-		color: #ffffff !important;
+		color: #000000; !important;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.6em;
@@ -2323,7 +2327,7 @@
 		}
 
 	label {
-		color: #ffffff;
+		color: #000000;
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.7em 0;
@@ -2628,6 +2632,7 @@
 
 			.image.fit img {
 				width: 100%;
+				height: 100%;
 			}
 
 		.image.main {
@@ -3021,7 +3026,7 @@
 
 		.spotlights > section > .image {
 			background-position: center center;
-			background-size: cover;
+			background-size: 100% 100%;
 			border-radius: 0;
 			display: block;
 			position: relative;
@@ -3253,27 +3258,27 @@
 		}
 
 		.wrapper.style1 {
-			background-color: #5e42a6;
+			background: linear-gradient(to right, #00f260, #0575e6);
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background: linear-gradient(to right, #00f260, #0575e6);
 		}
 
 		.wrapper.style2 {
-			background-color: #5052b5;
+			background: linear-gradient(to right, #00f260, #0575e6);
 		}
 
 		.wrapper.style2-alt {
-			background-color: #3e4094;
+			background-color: #52c234;
 		}
 
 		.wrapper.style3 {
-			background-color: #b74e91;
+			background: linear-gradient(to right, #00f260, #0575e6);
 		}
 
 		.wrapper.style3-alt {
-			background-color: #953d75;
+			background-color: #52c234;
 		}
 
 		.wrapper.fullscreen {
@@ -3380,14 +3385,14 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #5e42a6;
+		background: linear-gradient(to right, #00f260, #0575e6);
 		cursor: default;
 		padding: 1.75em 2em;
 	}
 
 		#header > .title {
 			border: 0;
-			color: #ffffff;
+			color: #000000;
 			display: block;
 			font-size: 1.25em;
 			font-weight: bold;
@@ -3534,7 +3539,7 @@
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #312450;
+		background: linear-gradient(to right, #00f260, #0575e6);
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3892,6 +3897,7 @@
 
 		#intro p {
 			font-size: 1.25em;
+			color: #000000;
 		}
 
 			@media screen and (max-width: 980px) {
@@ -3917,3 +3923,8 @@
 			}
 
 		}
+
+	.clips { 
+                overflow:hidden;
+                text-overflow:ellipsis;
+         }

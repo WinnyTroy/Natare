@@ -38,6 +38,6 @@ def index():
     return render_template('home/index.html', contact_form=contact_form)
 
 
-@home.route("menu")
+@home.route("parishes")
 def display_menu():
     return render_template('menu/elements.html')
