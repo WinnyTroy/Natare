@@ -21,8 +21,8 @@ class Config(object):
     CSRF_ENABLED = True
     THREADS_PER_PAGE = 2
     DATABASE_CONNECT_OPTIONS = {}
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'natare.db')
-    # SQLALCHEMY_DATABASE_URI = os.environ["DATABASE_URL"] or 'sqlite:///' + os.path.join(basedir, 'natare.db')
+    # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'natare.db')
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL") or 'sqlite:///' + os.path.join(basedir, 'natare.db')
     # SECURITY_PASSWORD_SALT = os.environ["SECURITY_PASSWORD_SALT"]
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 

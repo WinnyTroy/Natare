@@ -1,5 +1,5 @@
 from . import home
-from controller import generate_pdf, send_email
+from app.mod_home.controller import generate_pdf, send_email
 from app.forms import ContactForm
 from flask import render_template, url_for, redirect, request
 from app import db
