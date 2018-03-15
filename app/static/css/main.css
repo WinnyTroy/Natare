@@ -2921,7 +2921,6 @@
 
 		.split > * {
 			width: calc(50% - 2.5em);
-			background-color: rgba(0, 0, 0, 0.1);
 		}
 
 		.split > :nth-child(2n - 1) {
@@ -3083,11 +3082,11 @@
 			}
 
 		.spotlights > section:nth-child(2) {
-			background-color: rgba(0, 0, 0, 0.1);
+			background-color: #ffffff;
 		}
 
 		.spotlights > section:nth-child(3) {
-			background-color: rgba(0, 0, 0, 0.1);
+			background-color: #ffffff;
 		}
 
 		.spotlights > section.inactive > .image:before, body.is-loading .spotlights > section > .image:before {
@@ -3106,9 +3105,6 @@
 
 			.spotlights > section > .content {
 				padding: 4em 4em 2em 4em ;
-				background-color: rgba(0, 0, 0, 0.1);
-				border-top: 1px solid blue;
-				border-bottom: 1px solid blue;
 			}
 
 		}
@@ -3259,11 +3255,11 @@
 		}
 
 		.wrapper.style1 {
-			background: linear-gradient(to right, #00f260, #0575e6);
+			background: #ffffff;
 		}
 
 		.wrapper.style1-alt {
-			background: linear-gradient(to right, #00f260, #0575e6);
+			background: #ffffff;
 		}
 
 		.wrapper.style2 {
