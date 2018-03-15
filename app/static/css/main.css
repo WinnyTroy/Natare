@@ -2345,7 +2345,7 @@ s	}
 		background: rgba(255, 255, 255, 0.05);
 		border-radius: 0.25em;
 		border: none;
-		border: solid 1px black;
+		border: solid 1px rgba(255, 255, 255, 0.15);
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -2416,6 +2416,8 @@ s	}
 	input[type="email"],
 	select {
 		height: 2.75em;
+		border: 1px solid black;
+		
 	}
 
 	textarea {
@@ -3193,7 +3195,7 @@ s	}
 		}
 
 			table.alt tbody tr td {
-				border: solid 1px rgba(255, 255, 255, 0.15);
+				border: solid 1px;
 				border-left-width: 0;
 				border-top-width: 0;
 			}
