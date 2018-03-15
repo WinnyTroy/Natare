@@ -2330,7 +2330,7 @@
 		margin: 0 0 0.7em 0;
 		display: block;
 		font-size: 1.1em;
-	}
+s	}
 
 	input[type="text"],
 	input[type="password"],
@@ -2345,7 +2345,7 @@
 		background: rgba(255, 255, 255, 0.05);
 		border-radius: 0.25em;
 		border: none;
-		border: solid 1px rgba(255, 255, 255, 0.15);
+		border: solid 1px black;
 		color: inherit;
 		display: block;
 		outline: 0;
